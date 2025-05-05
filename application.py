@@ -3,7 +3,8 @@ import numpy as np
 from flask import Flask, request, render_template
 
 # Initialize Flask app
-app = Flask(__name__)
+application = Flask(__name__)
+app = application
 
 # Load the trained pipeline (which includes scaler + linear regression)
 model = pickle.load(open("lr_pipeline.pkl", "rb"))
