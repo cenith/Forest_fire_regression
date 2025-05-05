@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forest Fire Prediction</title>
+</head>
+<body>
+    <h2>Enter Forest Fire Parameters</h2>
+    <form action="/" method="POST">
+        <label>Temperature:</label>
+        <input type="number" name="Temperature" step="any" required><br><br>
+
+        <label>Relative Humidity (RH):</label>
+        <input type="number" name="RH" step="any" required><br><br>
+
+        <label>Wind Speed (Ws):</label>
+        <input type="number" name="Ws" step="any" required><br><br>
+
+        <label>Rain:</label>
+        <input type="number" name="Rain" step="any" required><br><br>
+
+        <label>FFMC:</label>
+        <input type="number" name="FFMC" step="any" required><br><br>
+
+        <label>DMC:</label>
+        <input type="number" name="DMC" step="any" required><br><br>
+
+        <label>ISI:</label>
+        <input type="number" name="ISI" step="any" required><br><br>
+
+        <label>Classes (1 = fire, 0 = not fire):</label>
+        <input type="number" name="Classes" min="0" max="1" required><br><br>
+
+        <label>Region (0 = Bejaia, 1 = Sidi-Bel Abbes):</label>
+        <input type="number" name="Region" min="0" max="1" required><br><br>
+
+        <input type="submit" value="Predict FWI">
+    </form>
+
+    {% if prediction is not none %}
+        <h3>Predicted FWI: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
+
+
